@@ -1,0 +1,24 @@
+footer{
+  border-top: 4px solid black;
+  background-color: #0b0808;
+}
+.social-link {
+  list-style: none;
+}
+.social-link li {
+  margin-left: 20px;
+  font-size: 18px;
+}
+.social-link a:hover {
+  color: tomato;
+  text-decoration: underline;
+  transition: all .5s;
+}
+.social-link a {
+  text-decoration: none;
+  margin-left: 3px;
+  color:#ffffff;
+}
+.copyright{
+  color: #ffffff;
+}

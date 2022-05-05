@@ -1,0 +1,6 @@
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  margin: 20px 0;
+  grid-gap: 20px;
+}
