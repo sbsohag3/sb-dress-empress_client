@@ -63,13 +63,13 @@ const Login = () => {
   };
 
   return (
-    <div className="container  mx-auto mb-3">
-     <PageTitle title={'Login'}/>
+    <div className="container col-md-3 mx-auto mb-3">
+      <PageTitle title={"Login"} />
       <div className="">
         <h2 className="text-info text-center mt-3">Please Login</h2>
         <div className="border p-5 login-form">
           <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-2" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
               <Form.Control
                 ref={emailRef}
@@ -79,7 +79,7 @@ const Login = () => {
               />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group className="mb-2" controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
               <Form.Control
                 ref={passwordRef}
@@ -89,12 +89,12 @@ const Login = () => {
               />
             </Form.Group>
 
-            <Button variant="info w-100 mb-4" type="submit">
+            <Button variant="info w-100 my-3" type="submit">
               Log In
             </Button>
           </Form>
           {errorElement}
-          <p className="text-center">
+          <p className="login-text text-center">
             Are You new?
             <Link
               to="/register"
@@ -104,7 +104,7 @@ const Login = () => {
               Please Register
             </Link>
           </p>
-          <p className="text-center">
+          <p className="login-text text-center">
             Forget Password?
             <button
               className="btn btn-link text-primary text-decoration-none "

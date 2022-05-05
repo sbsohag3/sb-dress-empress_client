@@ -24,8 +24,9 @@ const Header = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav>
-              <Nav.Link as={Link} to="/home" className="text-white">
-                Home
+             
+              <Nav.Link as={Link} to="/allItems" className="text-white">
+               Allitems
               </Nav.Link>
 
               {user && (

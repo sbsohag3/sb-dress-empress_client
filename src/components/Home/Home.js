@@ -12,8 +12,8 @@ const Home = () => {
   }, []);
   return (
     <div className="container">
-      <PageTitle title={"About"} />
-      <h2 className="text-center text-info">YOU MAY ALSO LIKE</h2>
+      <PageTitle title={"Home"} />
+      <h2 className="text-center text-info my-5">YOU MAY ALSO LIKE</h2>
       <div className="services-container">
         {products.slice(0, 6).map((product) => (
           <Product key={product.id} product={product} />

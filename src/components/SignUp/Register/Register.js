@@ -45,9 +45,8 @@ const Register = () => {
   };
 
   return (
-    
-    <div className="register">
-     <PageTitle title={'Register'}/>
+    <div className="register col-md-3 mx-auto">
+      <PageTitle title={"Register"} />
       <h2 className="text-info text-center mt-3">Please Register</h2>
       <div className="register-form  border">
         <form onSubmit={handleRegister}>
@@ -79,11 +78,13 @@ const Register = () => {
             id="terms"
           />
           <label
-            className={`ps-2 fs-.5 ${agree ? "text-primary" : "text-danger"}`}
+            className={`ps-2  ${agree ? "text-primary" : "text-danger"}`}
             htmlFor="terms"
           >
-            I Accept the <span className="text-success">Terms of Use</span> &{" "}
-            <span className="text-success">Privacy Policy</span>
+            <p>
+              I Accept the <span className="text-success">Terms of Use</span> &
+              <span className="text-success">Privacy Policy</span>
+            </p>
           </label>
           <input
             disabled={!agree}
