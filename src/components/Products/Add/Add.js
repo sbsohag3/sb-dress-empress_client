@@ -1,12 +1,14 @@
 import React from "react";
 import PageTitle from "../../Shared/PageTitle/PageTitle";
 import { useForm } from "react-hook-form";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
 
 const Add = () => {
+  const [user] = useAuthState(auth);
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    
-    const url = `http://localhost:5000/product`;
+    const url = `http://localhost:5000/myItems`;
     fetch(url, {
       method: "POST",
       headers: {
@@ -29,6 +31,17 @@ const Add = () => {
         onSubmit={handleSubmit(onSubmit)}
       >
         <input
+          className="w-100 mb-2"
+          type="email"
+          value={user?.email}
+          name=""
+          id="email"
+          placeholder="Email"
+          required
+          readOnly
+          disabled
+        />
+        <input
           className="mb-2"
           placeholder="Category"
           {...register("category")}
@@ -38,12 +51,7 @@ const Add = () => {
           placeholder="Name"
           {...register("name", { required: true, maxLength: 20 })}
         />
-        <input
-          className="mb-2"
-          placeholder="Seller"
-         
-          {...register("seller")}
-        />
+        <input className="mb-2" placeholder="Seller" {...register("seller")} />
         <textarea
           className="mb-2"
           placeholder="Description"
@@ -66,12 +74,6 @@ const Add = () => {
           placeholder="Photo URL"
           type="text"
           {...register("img")}
-        />
-        <input
-          className="mb-2"
-          placeholder="Quantity"
-          type="number"
-          {...register("quantity")}
         />
 
         <br />

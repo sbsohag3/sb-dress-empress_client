@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home/Home';
+import ProductDetail from './components/ProductDetail/ProductDetail';
 import Add from './components/Products/Add/Add';
 import AllItems from './components/Products/AllItems/AllItems';
 import ManageItems from './components/Products/ManageItems/ManageItems';
@@ -75,6 +76,7 @@ function App() {
             </RequireAuth>
           }
         />
+        <Route path="/product/:productId" element={<ProductDetail/>} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
