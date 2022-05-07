@@ -9,8 +9,7 @@ const Add = () => {
   const [user] = useAuthState(auth);
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    
-    const url = `http://localhost:5000/myItems`;
+    const url = `https://fathomless-meadow-24305.herokuapp.com/myItems`;
     console.log(url);
     fetch(url, {
       method: "POST",
@@ -25,7 +24,6 @@ const Add = () => {
         toast.success("Update Successfully!!!", {
           position: "top-center",
         });
-      
       });
   };
   return (
@@ -37,14 +35,12 @@ const Add = () => {
         className="d-flex flex-column border shadow p-5"
         onSubmit={handleSubmit(onSubmit)}
       >
-        
         <input
           className="mb-2"
           placeholder="Email"
           value={user?.email}
           type="text"
           {...register("email")}
-          
         />
         <input
           className="mb-2"

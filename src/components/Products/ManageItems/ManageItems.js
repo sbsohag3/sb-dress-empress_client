@@ -8,14 +8,14 @@ const ManageItems = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure?");
     if (proceed) {
-      const url = `http://localhost:5000/product/${id}`;
+      const url = `https://fathomless-meadow-24305.herokuapp.com/product/${id}`;
       fetch(url, {
         method: "DELETE",
       })
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
-          const remaining = products.filter(product => product._id !== id)
+          const remaining = products.filter((product) => product._id !== id);
           setProducts(remaining);
         });
     }

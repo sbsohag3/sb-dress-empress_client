@@ -11,7 +11,7 @@ const UpdateProduct = () => {
   const { id } = useParams();
   const [update, setUpdate] = useState({});
   useEffect(() => {
-    const url = `http://localhost:5000/products/${id}`;
+    const url = `https://fathomless-meadow-24305.herokuapp.com/products/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setUpdate(data));
@@ -22,7 +22,7 @@ const UpdateProduct = () => {
     const stock = event.target.stock.value;
 
     const data = { price, stock };
-    const url = `http://localhost:5000/product/${id}`;
+    const url = `https://fathomless-meadow-24305.herokuapp.com/product/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -42,7 +42,7 @@ const UpdateProduct = () => {
   };
   return (
     <div className="col-md-4 mx-auto text-center my-5">
-      <PageTitle title={"Update"} />
+      <PageTitle title={"Update Product"} />
 
       <h2 className="text-info">Pleas Your Product : {update.name}</h2>
       <form
@@ -75,8 +75,8 @@ const UpdateProduct = () => {
           placeholder="Stock"
           required
         />
-        
-        <input type="submit"  value="Update" className="btn btn-primary" />
+
+        <input type="submit" value="Update" className="btn btn-primary" />
       </form>
       <ToastContainer />
     </div>

@@ -10,7 +10,7 @@ const Blogs = () => {
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">
-                Difference between javascript and nodejs
+                Difference between javascript and nodejs?
               </h5>
               <p class="card-text">
                 JavaScript is a programming language. It is running in any web
@@ -34,7 +34,7 @@ const Blogs = () => {
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">
-                When should you use nodejs and when should you use mongodb
+                When should you use nodejs and when should you use mongodb?
               </h5>
               <p class="card-text">
                 Nodejs is a Javascript engine that you can write any application
@@ -56,7 +56,7 @@ const Blogs = () => {
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">
-                What is the purpose of jwt and how does it work
+                What is the purpose of jwt and how does it work?
               </h5>
               <p class="card-text">
                 JWT is an open standard used to share security information

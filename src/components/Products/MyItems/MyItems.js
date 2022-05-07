@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from '../../../firebase.init';
-import PageTitle from '../../Shared/PageTitle/PageTitle';
-
+import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
+import PageTitle from "../../Shared/PageTitle/PageTitle";
 
 const MyItems = () => {
   const [user] = useAuthState(auth);
@@ -10,7 +9,7 @@ const MyItems = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure?");
     if (proceed) {
-      const url = `http://localhost:5000/product/${id}`;
+      const url = `https://fathomless-meadow-24305.herokuapp.com/product/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -21,20 +20,19 @@ const MyItems = () => {
           setMyItems(remaining);
         });
     }
-  }
+  };
   useEffect(() => {
     const email = user.email;
-    const url = `http://localhost:5000/myItems?email=${email}`;
+    const url = `https://fathomless-meadow-24305.herokuapp.com/myItems?email=${email}`;
     fetch(url, {
       headers: {
-        authorization: `Bearer ${localStorage.getItem('accessToken')}`
-      }
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
     })
       .then((res) => res.json())
       .then((data) => setMyItems(data));
   }, [user]);
 
-  
   return (
     <div className="container my-5">
       <PageTitle title={"MyItems"} />
