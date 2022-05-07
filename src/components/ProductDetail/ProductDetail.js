@@ -47,10 +47,14 @@ const ProductDetail = () => {
         <h5 className="text-danger">Price: {product.price}</h5>
         <p>Stock: {product.stock}</p>
         <p>{product.description}</p>
-
-        <button onClick={deliveryUpdate} className="btn btn-success me-2">
-          Delivery
-        </button>
+        
+        {product.stock === 0 ? (
+          <button className="btn btn-danger me-2">Sold Out</button>
+        ) : (
+          <button onClick={deliveryUpdate} className="btn btn-success me-2">
+            Delivery
+          </button>
+        )}
 
         <Link to={`/update/${product._id}`}>
           <button className="btn btn-info">Update</button>
