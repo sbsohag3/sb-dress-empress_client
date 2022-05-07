@@ -3,6 +3,7 @@ import PageTitle from "../../Shared/PageTitle/PageTitle";
 import { useForm } from "react-hook-form";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
+import { toast, ToastContainer } from "react-toastify";
 
 const Add = () => {
   const [user] = useAuthState(auth);
@@ -19,6 +20,10 @@ const Add = () => {
       .then((res) => res.json())
       .then((result) => {
         console.log(result);
+        toast.success("Update Successfully!!!", {
+          position: "top-center",
+        });
+        
       });
   };
   return (
@@ -79,6 +84,7 @@ const Add = () => {
         <br />
         <input type="submit" value="Add Items" className="btn btn-primary" />
       </form>
+      <ToastContainer/>
     </div>
   );
 };

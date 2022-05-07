@@ -6,7 +6,6 @@ import SingleItem from "./SingleItem";
 
 const AllItems = () => {
   const [products] = useProducts();
-
   return (
     <div className="container">
       <PageTitle title={"AllItems"} />

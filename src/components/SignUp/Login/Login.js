@@ -1,4 +1,5 @@
-import React, { useRef } from 'react';
+// import axios from "axios";
+import React, { useRef } from "react";
 import { Button, Form } from "react-bootstrap";
 import {
   useSendPasswordResetEmail,
@@ -11,13 +12,12 @@ import "react-toastify/dist/ReactToastify.css";
 
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
-import PageTitle from '../../Shared/PageTitle/PageTitle';
+import PageTitle from "../../Shared/PageTitle/PageTitle";
 import SocialLogin from "../SocialLogin/SocialLogin";
-import './Login.css'
-
+import "./Login.css";
 
 const Login = () => {
-    const emailRef = useRef("");
+  const emailRef = useRef("");
   const passwordRef = useRef("");
   const navigate = useNavigate();
   const location = useLocation();
@@ -37,12 +37,15 @@ const Login = () => {
     navigate(from, { replace: true });
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
 
-    signInWithEmailAndPassword(email, password);
+    await signInWithEmailAndPassword(email, password);
+    // const { data } = await axios.post("http://localhost:5000/login", { email });
+    // localStorage.setItem("accessToken", data.accessToken);
+    // navigate(from, { replace: true });
   };
   const navigateRegister = (event) => {
     navigate("/register");
@@ -51,14 +54,13 @@ const Login = () => {
     const email = emailRef.current.value;
     if (email) {
       await sendPasswordResetEmail(email);
-      toast("Sent email",{
-        position:'top-center'
+      toast("Sent email", {
+        position: "top-center",
       });
-    }
-    else{
-      toast('Please Enter Your Email',{
-        position: 'top-center'
-      })
+    } else {
+      toast("Please Enter Your Email", {
+        position: "top-center",
+      });
     }
   };
 
@@ -122,6 +124,3 @@ const Login = () => {
 };
 
 export default Login;
-
-
-

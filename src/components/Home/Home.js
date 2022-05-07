@@ -1,15 +1,11 @@
-import React, { useEffect, useState } from "react";
+import useProducts from "../../hooks/useProducts/useProducts";
 import Product from "../Products/Product/Product";
 import PageTitle from "../Shared/PageTitle/PageTitle";
 import './Home.css'
 const Home = () => {
-  const [products, setProducts] = useState([]);
+  const [products] = useProducts([]);
 
-  useEffect(() => {
-    fetch("http://localhost:5000/products")
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, []);
+  
   return (
     <div className="container">
       <PageTitle title={"Home"} />
