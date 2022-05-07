@@ -2,22 +2,43 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 const ProductDetail = () => {
-
+  
   const { productId } = useParams();
   const [product, setProduct] = useState({});
-  const [reload, setReload] = useState(true)
 
- 
-  useEffect(()=>{
+  useEffect(() => {
     const url = `http://localhost:5000/products/${productId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProduct(data));
-  },[])
-  
+  }, []);
+ 
+  const deliveryUpdate = () => {
+    const data = {...product, stock: product.stock -1}
+    const url = `http://localhost:5000/product/${product._id}`;
+    fetch(url, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log("success", result);
+        const url = `http://localhost:5000/products/${productId}`;
+        fetch(url)
+          .then((res) => res.json())
+          .then((data) => setProduct(data));
+        
+      });
+  };
+
   return (
     <div className="col-md-4 mx-auto my-5">
-      <h2 className="text-center text-info my-3">Product Details :{product.name}</h2>
+      <h2 className="text-center text-info my-3">
+        Product Details :{product.name}
+      </h2>
       <div className="border rounded p-3 text-center">
         <img width={"100%"} src={product.img} alt="" />
         <h3>{product.name}</h3>
@@ -27,7 +48,7 @@ const ProductDetail = () => {
         <p>Stock: {product.stock}</p>
         <p>{product.description}</p>
         <button
-          
+          onClick={deliveryUpdate}
           className="btn btn-success me-2"
         >
           Delivery
