@@ -18,6 +18,7 @@ const Home = () => {
             <Product key={product.id} product={product} />
           ))}
         </div>
+        
       </div>
     </>
   );

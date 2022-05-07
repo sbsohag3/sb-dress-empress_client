@@ -1,11 +1,11 @@
-
 import useProducts from "../../../hooks/useProducts/useProducts";
 import PageTitle from "../../Shared/PageTitle/PageTitle";
 import "./AllItems.css";
 import SingleItem from "./SingleItem";
 
 const AllItems = () => {
-  const [products] = useProducts();
+  const [products] = useProducts([]);
+
   return (
     <div className="container">
       <PageTitle title={"AllItems"} />

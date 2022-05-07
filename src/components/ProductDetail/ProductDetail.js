@@ -47,7 +47,7 @@ const ProductDetail = () => {
         <h5 className="text-danger">Price: {product.price}</h5>
         <p>Stock: {product.stock}</p>
         <p>{product.description}</p>
-        
+
         {product.stock === 0 ? (
           <button className="btn btn-danger me-2">Sold Out</button>
         ) : (
