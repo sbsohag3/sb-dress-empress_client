@@ -2,9 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 const ProductDetail = () => {
+
   const { productId } = useParams();
   const [product, setProduct] = useState({});
+  const [reload, setReload] = useState(true)
 
+ 
   useEffect(()=>{
     const url = `http://localhost:5000/products/${productId}`;
     fetch(url)
