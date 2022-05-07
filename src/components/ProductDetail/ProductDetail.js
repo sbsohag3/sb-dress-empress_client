@@ -7,7 +7,7 @@ const ProductDetail = () => {
   const [product, setProduct] = useState({});
 
   useEffect(() => {
-    const url = `https://fathomless-meadow-24305.herokuapp.com/products/${productId}`;
+    const url = `http://localhost:5000/products/${productId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProduct(data));
@@ -15,7 +15,7 @@ const ProductDetail = () => {
 
   const deliveryUpdate = () => {
     const data = { ...product, stock: product.stock - 1 };
-    const url = `https://fathomless-meadow-24305.herokuapp.com/product/${product._id}`;
+    const url = `http://localhost:5000/product/${product._id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -26,7 +26,7 @@ const ProductDetail = () => {
       .then((res) => res.json())
       .then((result) => {
         console.log("success", result);
-        const url = `https://fathomless-meadow-24305.herokuapp.com/products/${productId}`;
+        const url = `http://localhost:5000/products/${productId}`;
         fetch(url)
           .then((res) => res.json())
           .then((data) => setProduct(data));

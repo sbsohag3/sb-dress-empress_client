@@ -11,7 +11,7 @@ const UpdateProduct = () => {
   const { id } = useParams();
   const [update, setUpdate] = useState({});
   useEffect(() => {
-    const url = `https://fathomless-meadow-24305.herokuapp.com/products/${id}`;
+    const url = `http://localhost:5000/products/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setUpdate(data));
@@ -22,7 +22,7 @@ const UpdateProduct = () => {
     const stock = event.target.stock.value;
 
     const data = { price, stock };
-    const url = `https://fathomless-meadow-24305.herokuapp.com/product/${id}`;
+    const url = `http://localhost:5000/product/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {

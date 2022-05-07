@@ -43,10 +43,7 @@ const Login = () => {
     const password = passwordRef.current.value;
 
     await signInWithEmailAndPassword(email, password);
-    const { data } = await axios.post(
-      "https://fathomless-meadow-24305.herokuapp.com/login",
-      { email }
-    );
+    const { data } = await axios.post("http://localhost:5000/login", { email });
     localStorage.setItem("accessToken", data.accessToken);
     navigate(from, { replace: true });
   };
@@ -68,7 +65,7 @@ const Login = () => {
   };
 
   return (
-    <div className="container col-md-3 mx-auto mb-3">
+    <div className="container col-md-4 mx-auto mb-3">
       <PageTitle title={"Login"} />
       <div className="">
         <h2 className="text-info text-center mt-3">Please Login</h2>

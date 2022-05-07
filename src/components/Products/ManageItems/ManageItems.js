@@ -8,7 +8,7 @@ const ManageItems = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure?");
     if (proceed) {
-      const url = `https://fathomless-meadow-24305.herokuapp.com/product/${id}`;
+      const url = `http://localhost:5000/product/${id}`;
       fetch(url, {
         method: "DELETE",
       })
