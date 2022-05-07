@@ -9,7 +9,9 @@ const Add = () => {
   const [user] = useAuthState(auth);
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
+    
     const url = `http://localhost:5000/myItems`;
+    console.log(url);
     fetch(url, {
       method: "POST",
       headers: {
@@ -23,7 +25,7 @@ const Add = () => {
         toast.success("Update Successfully!!!", {
           position: "top-center",
         });
-        
+      
       });
   };
   return (
@@ -35,16 +37,14 @@ const Add = () => {
         className="d-flex flex-column border shadow p-5"
         onSubmit={handleSubmit(onSubmit)}
       >
+        
         <input
-          className="w-100 mb-2"
-          type="email"
-          value={user?.email}
-          name=""
-          id="email"
+          className="mb-2"
           placeholder="Email"
-          required
-          readOnly
-          disabled
+          value={user?.email}
+          type="text"
+          {...register("email")}
+          
         />
         <input
           className="mb-2"
@@ -84,7 +84,7 @@ const Add = () => {
         <br />
         <input type="submit" value="Add Items" className="btn btn-primary" />
       </form>
-      <ToastContainer/>
+      <ToastContainer />
     </div>
   );
 };

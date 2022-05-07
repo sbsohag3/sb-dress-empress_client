@@ -1,5 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import About from './components/About/About';
+import Blogs from './components/Blogs/Blogs';
 import Home from './components/Home/Home';
 import ProductDetail from './components/ProductDetail/ProductDetail';
 import UpdateProduct from './components/ProductDetail/UpdateProduct';
@@ -79,6 +81,8 @@ function App() {
         />
         <Route path="/product/:productId" element={<ProductDetail/>} />
         <Route path='/update/:id' element={<UpdateProduct/>}/>
+        <Route path="/blogs" element={<Blogs/>} />
+        <Route path="/about" element={<About/>} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>

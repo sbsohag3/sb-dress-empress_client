@@ -13,7 +13,7 @@ const Header = () => {
      };
   return (
     <Navbar collapseOnSelect expand="lg" bg="info" variant="dark" sticky="top">
-      <Container className="row row-cols-6">
+      <Container className="row row-cols-4">
         <Col>
           <Navbar.Brand as={Link} to="/">
             <img src={logo} alt="" />
@@ -24,9 +24,8 @@ const Header = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav>
-             
               <Nav.Link as={Link} to="/allItems" className="text-white">
-               Allitems
+                Allitems
               </Nav.Link>
 
               {user && (
@@ -42,6 +41,12 @@ const Header = () => {
                   </Nav.Link>
                 </>
               )}
+              <Nav.Link as={Link} to="/blogs" className="text-white">
+                Blogs
+              </Nav.Link>
+              <Nav.Link as={Link} to="/about" className="text-white">
+                About
+              </Nav.Link>
               {user ? (
                 <Nav.Link
                   onClick={handleSignOut}
