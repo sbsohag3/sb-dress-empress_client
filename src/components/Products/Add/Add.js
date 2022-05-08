@@ -9,8 +9,8 @@ const Add = () => {
   const [user] = useAuthState(auth);
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    const url = `http://localhost:5000/myItems`;
-    console.log(url);
+    const url = `https://fathomless-meadow-24305.herokuapp.com/myItems`;
+    
     fetch(url, {
       method: "POST",
       headers: {

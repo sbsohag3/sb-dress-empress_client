@@ -9,7 +9,7 @@ const MyItems = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure?");
     if (proceed) {
-      const url = `http://localhost:5000/product/${id}`;
+      const url = `https://fathomless-meadow-24305.herokuapp.com/product/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -23,7 +23,7 @@ const MyItems = () => {
   };
   useEffect(() => {
     const email = user.email;
-    const url = `http://localhost:5000/myItems?email=${email}`;
+    const url = `https://fathomless-meadow-24305.herokuapp.com/myItems?email=${email}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setMyItems(data));
