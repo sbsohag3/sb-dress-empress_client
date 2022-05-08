@@ -7,7 +7,6 @@ import PageTitle from "../Shared/PageTitle/PageTitle";
 
 const UpdateProduct = () => {
   const [user] = useAuthState(auth);
-
   const { id } = useParams();
   const [update, setUpdate] = useState({});
   useEffect(() => {
@@ -18,10 +17,10 @@ const UpdateProduct = () => {
   }, []);
   const updateProduct = (event) => {
     event.preventDefault();
-    const price = event.target.price.value;
+    // const price = event.target.price.value;
     const stock = event.target.stock.value;
 
-    const data = { price, stock };
+    const data = { stock };
     const url = `http://localhost:5000/product/${id}`;
     fetch(url, {
       method: "PUT",
@@ -60,13 +59,13 @@ const UpdateProduct = () => {
           readOnly
           disabled
         />
-        <input
+        {/* <input
           type="number"
           className="w-100 mb-2"
           name="price"
           placeholder="Price"
           required
-        />
+        /> */}
 
         <input
           type="number"

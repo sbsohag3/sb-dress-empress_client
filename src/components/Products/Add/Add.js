@@ -46,35 +46,41 @@ const Add = () => {
           className="mb-2"
           placeholder="Category"
           {...register("category")}
+          required
         />
         <input
           className="mb-2"
           placeholder="Name"
           {...register("name", { required: true, maxLength: 20 })}
+          required
         />
         <input className="mb-2" placeholder="Seller" {...register("seller")} />
         <textarea
           className="mb-2"
           placeholder="Description"
           {...register("description")}
+          required
         />
         <input
           className="mb-2"
           placeholder="Price"
           type="number"
           {...register("price")}
+          required
         />
         <input
           className="mb-2"
           placeholder="Stock"
           type="number"
           {...register("stock")}
+          required
         />
         <input
           className="mb-2"
           placeholder="Photo URL"
           type="text"
           {...register("img")}
+          required
         />
 
         <br />
