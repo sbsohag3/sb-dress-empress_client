@@ -45,7 +45,7 @@ const Register = () => {
   };
 
   return (
-    <div className="register col-md-3 mx-auto">
+    <div className="register col-md-4 mx-auto">
       <PageTitle title={"Register"} />
       <h2 className="text-info text-center mt-3">Please Register</h2>
       <div className="register-form  border">
