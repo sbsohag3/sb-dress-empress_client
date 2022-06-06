@@ -11,7 +11,7 @@ const ProductDetail = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProduct(data));
-  }, []);
+  }, [productId]);
 
   const deliveryUpdate = () => {
     const data = { ...product, stock: product.stock - 1 };

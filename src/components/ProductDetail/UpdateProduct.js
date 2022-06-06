@@ -14,7 +14,7 @@ const UpdateProduct = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setUpdate(data));
-  }, []);
+  }, [id]);
   const updateProduct = (event) => {
     event.preventDefault();
     // const price = event.target.price.value;
